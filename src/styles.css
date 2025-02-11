@@ -1,0 +1,59 @@
+/* Base layout */ 
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .layout-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    min-height: calc(100vh - 70px); /* Assuming the header height */
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    margin-left: 100px;
+    width:fit-content;
+    background-color: #0e1421;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+    min-height: calc(100vh - 70px - 50px); /* Header and Footer sizes */
+  }
+  
+  .content-wrapper.collapsed {
+    margin-left: 60px;
+  }
+  
+  .router-wrapper {
+    padding: 15px;
+  }
+  
+  .footer {
+    background-color: #0e1421;
+    color: rgb(18, 16, 62);
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    border-top: 2px solid #374151;
+  }
+  
+  body{
+    background-color: #0e1421;
+  }
+
+  :root {
+    --background-color: #0e1421;
+    --card-background-color: #364356;
+    --text-color: #ffffff;
+    --border-color: #03045e;
+    --hover-shadow: rgba(138, 91, 189, 0.15);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+  }
+  

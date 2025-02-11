@@ -1,0 +1,141 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    <span [class.icon-open]="!isCollapsed" [class.icon-close]="isCollapsed"></span>
+  </button>
+
+  <nav class="sidebar-nav">
+    <!-- Home Link -->
+    <a href="#" class="nav-item" routerLinkActive="active">Home</a>
+
+    <!-- Getting Started Section -->
+    <div class="dropdown">
+      <div class="nav-item" (click)="toggleDropdown('gettingStarted')">
+        Getting Started
+        <span class="arrow" [class.down]="!dropdownStates['gettingStarted']" [class.right]="dropdownStates['gettingStarted']"></span>
+      </div>
+      <div class="dropdown-content" *ngIf="dropdownStates['gettingStarted']">
+        <div class="submenu-item">
+          <a routerLink="/getting-started/overview" routerLinkActive="active" class="submenu-item">
+            Overview
+          </a>
+          <span class="arrow" (click)="toggleDropdown('overview'); $event.stopPropagation()"
+            [class.down]="!dropdownStates['overview']" 
+            [class.right]="dropdownStates['overview']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['overview']">
+          <a routerLink="/getting-started/overview/project-workflow" class="submenu-item" routerLinkActive="active">Project Workflow</a>
+          <a routerLink="/getting-started/overview/system-requirements" class="submenu-item" routerLinkActive="active">System Requirements</a>
+          <a routerLink="/getting-started/overview/key-features" class="submenu-item" routerLinkActive="active">Key Features</a>
+        </div>
+
+        <div class="submenu-item" (click)="toggleDropdown('installation')">
+          Installation
+          <span class="arrow" [class.down]="!dropdownStates['installation']" [class.right]="dropdownStates['installation']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['installation']">
+          <a routerLink="/getting-started/installation/windows-setup" class="submenu-item" routerLinkActive="active">Windows Setup</a>
+          <a routerLink="/getting-started/installation/macos-setup" class="submenu-item" routerLinkActive="active">MacOS Setup</a>
+          <a routerLink="/getting-started/installation/linux-setup" class="submenu-item" routerLinkActive="active">Linux Setup</a>
+        </div>
+
+        <div class="submenu-item" (click)="toggleDropdown('configuration')">
+          Configuration
+          <span class="arrow" [class.down]="!dropdownStates['configuration']" [class.right]="dropdownStates['configuration']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['configuration']">
+          <a href="#" class="supersub-item">Environment Variables</a>
+          <a href="#" class="supersub-item">Configuration Files</a>
+          <a href="#" class="supersub-item">Startup Commands</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guides Section -->
+    <div class="dropdown">
+      <div class="nav-item" (click)="toggleDropdown('guides')">
+        Guides
+        <span class="arrow" [class.down]="!dropdownStates['guides']" [class.right]="dropdownStates['guides']"></span>
+      </div>
+      <div class="dropdown-content" *ngIf="dropdownStates['guides']">
+        <div class="submenu-item" (click)="toggleDropdown('userGuide')">
+          User Guide
+          <span class="arrow" [class.down]="!dropdownStates['userGuide']" [class.right]="dropdownStates['userGuide']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['userGuide']">
+          <a href="#" class="supersub-item">Dashboard Navigation</a>
+          <a href="#" class="supersub-item">User Roles</a>
+          <a href="#" class="supersub-item">Advanced Filters</a>
+        </div>
+
+        <div class="submenu-item" (click)="toggleDropdown('bestPractices')">
+          Best Practices
+          <span class="arrow" [class.down]="!dropdownStates['bestPractices']" [class.right]="dropdownStates['bestPractices']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['bestPractices']">
+          <a href="#" class="supersub-item">Security Best Practices</a>
+          <a href="#" class="supersub-item">Performance Tips</a>
+          <a href="#" class="supersub-item">Maintenance Checklist</a>
+        </div>
+
+        <div class="submenu-item" (click)="toggleDropdown('security')">
+          Security
+          <span class="arrow" [class.down]="!dropdownStates['security']" [class.right]="dropdownStates['security']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['security']">
+          <a href="#" class="supersub-item">Authentication Mechanisms</a>
+          <a href="#" class="supersub-item">Data Encryption</a>
+          <a href="#" class="supersub-item">Access Control Lists</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Reference Section -->
+    <div class="dropdown">
+      <div class="nav-item" (click)="toggleDropdown('apiReference')">
+        API Reference
+        <span class="arrow" [class.down]="!dropdownStates['apiReference']" [class.right]="dropdownStates['apiReference']"></span>
+      </div>
+      <div class="dropdown-content" *ngIf="dropdownStates['apiReference']">
+        <div class="submenu-item" (click)="toggleDropdown('restAPI')">
+          REST API
+          <span class="arrow" [class.down]="!dropdownStates['restAPI']" [class.right]="dropdownStates['restAPI']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['restAPI']">
+          <a href="#" class="supersub-item">Endpoints List</a>
+          <a href="#" class="supersub-item">Authentication</a>
+          <a href="#" class="supersub-item">Error Handling</a>
+        </div>
+
+        <div class="submenu-item" (click)="toggleDropdown('graphQL')">
+          GraphQL API
+          <span class="arrow" [class.down]="!dropdownStates['graphQL']" [class.right]="dropdownStates['graphQL']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['graphQL']">
+          <a href="#" class="supersub-item">Schema Definition</a>
+          <a href="#" class="supersub-item">Query Structure</a>
+          <a href="#" class="supersub-item">Error Responses</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support Section -->
+    <div class="dropdown">
+      <div class="nav-item" (click)="toggleDropdown('support')">
+        Support
+        <span class="arrow" [class.down]="!dropdownStates['support']" [class.right]="dropdownStates['support']"></span>
+      </div>
+      <div class="dropdown-content" *ngIf="dropdownStates['support']">
+        <a href="#" class="submenu-item">Contact Support</a>
+        <div class="submenu-item" (click)="toggleDropdown('docs')">
+          Documentation
+          <span class="arrow" [class.down]="!dropdownStates['docs']" [class.right]="dropdownStates['docs']"></span>
+        </div>
+        <div class="supersub-content" *ngIf="dropdownStates['docs']">
+          <a href="#" class="supersub-item">User Manual</a>
+          <a href="#" class="supersub-item">API Docs</a>
+          <a href="#" class="supersub-item">FAQs</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</aside>

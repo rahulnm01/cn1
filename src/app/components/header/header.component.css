@@ -1,0 +1,136 @@
+/* Fixed Transparent Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #0e1421; /* Semi-transparent */
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 2px solid #374151;
+  backdrop-filter: blur(8px); /* Blur effect for background */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo and Title Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+  margin-left: -30px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+/* Dropdown Content */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #38bdf8;
+  color: #ffffff;
+}
+
+/* Search Section */
+.search-section {
+  position: relative;
+  margin-right: 30px;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: #374151;
+  color: white;
+  width: 220px;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input:focus {
+  border: 1px solid #38bdf8;
+}
+
+/* Ensure Page Content Starts Below Fixed Header */
+body, .content {
+  margin-top: 70px;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .search-input {
+    width: 160px;
+  }
+}

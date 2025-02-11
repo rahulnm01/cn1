@@ -1,0 +1,77 @@
+/* Content Layout */
+.content {
+  margin-left: -60px; /* To account for the sidebar width */
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #0e1421;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+.content-header {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Content Cards */
+.content-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #364356;
+  border: 1px solid #03045e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(11, 7, 30, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(138, 91, 189, 0.15);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.card-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

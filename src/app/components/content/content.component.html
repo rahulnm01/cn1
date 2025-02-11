@@ -1,0 +1,38 @@
+<main class="content">
+  <!-- Angular Routing Outlet -->
+  <router-outlet></router-outlet>
+
+  <!-- Static Documentation Overview Section, will only show when showStaticContent is true -->
+  <section class="content-header" *ngIf="showStaticContent">
+    <h1 class="page-title">Documentation Overview</h1>
+    <p class="page-description">
+      Explore detailed guides and resources to help you get started with Crafty Connect and understand its advanced features.
+    </p>
+  </section>
+
+  <section class="content-body" *ngIf="showStaticContent">
+    <article class="card">
+      <h2 class="card-title">Getting Started</h2>
+      <p class="card-description">
+        Learn how to set up and configure Crafty Connect for your organization.
+      </p>
+      <a routerLink="/getting-started/overview/project-workflow" class="card-link">Read More →</a>
+    </article>
+
+    <article class="card">
+      <h2 class="card-title">API Reference</h2>
+      <p class="card-description">
+        Dive into the API details to integrate Prisma Cloud seamlessly.
+      </p>
+      <a href="#" class="card-link">Explore API →</a>
+    </article>
+
+    <article class="card">
+      <h2 class="card-title">Security Best Practices</h2>
+      <p class="card-description">
+        Understand how to secure your cloud environment effectively.
+      </p>
+      <a href="#" class="card-link">Learn More →</a>
+    </article>
+  </section>
+</main>

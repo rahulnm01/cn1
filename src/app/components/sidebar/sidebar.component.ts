@@ -16,7 +16,7 @@ export class SidebarComponent {
   dropdownStates: { [key: string]: boolean } = {
     gettingStarted: false,
     installation: false,
-    guides: false,
+    guides: false,                                                                                                                                                                                         
     bestPractices: false,
     apiReference: false,
     support: false,
@@ -28,6 +28,32 @@ export class SidebarComponent {
 
   toggleDropdown(section: string) {
     this.dropdownStates[section] = !this.dropdownStates[section];
+  }
+  menuItems: any[] = [];
+
+  ngOnInit() {
+    this.menuItems = this.generateMenuData('Parent', 1, 5); // Adjust depth & child counts as needed
+  }
+
+ 
+
+  isDropdownOpen(key: string): boolean {
+    return this.dropdownStates[key] || false;
+  }
+
+  generateMenuData(labelPrefix: string, depth: number, childCount: number): any[] {
+    if (depth > 5) return []; // Base condition to prevent infinite recursion
+
+    const menuItems = [];
+    for (let i = 1; i <= childCount; i++) {
+      const label = `${labelPrefix}-${i}`;
+      const children = this.generateMenuData(label, depth + 1, childCount);
+      menuItems.push({
+        label: label,
+        children: children,
+      });
+    }
+    return menuItems;
   }
 
 }

@@ -4,11 +4,12 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, SidebarComponent, ContentComponent, FooterComponent,  RouterModule],
+  imports: [HeaderComponent, SidebarComponent, ContentComponent, FooterComponent,ReactiveFormsModule,  RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

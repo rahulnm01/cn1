@@ -14,6 +14,7 @@ import { LinuxSetupComponent } from './app/pages/getting-started/installation/li
 import { appConfig } from './app/app.config';
 import { OverviewComponent } from './app/pages/getting-started/overview/overview.component';
 import { InstallationComponent } from './app/pages/getting-started/installation/installation.component';
+import { LoginComponent } from './app/components/auth/login/login.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Route[] = [
       { path: 'linux-setup', component: LinuxSetupComponent },
     ],
   },
-  { path: '**', redirectTo: '/' }, // Fallback
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '/content' }, // Fallback
 ];
 
 bootstrapApplication(AppComponent, appConfig

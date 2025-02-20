@@ -41,6 +41,7 @@
   
   body{
     background-color: #0e1421;
+    font-family: 'calibri light';
   }
 
   :root {
@@ -54,6 +55,6 @@
   body {
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: 'Arial', sans-serif;
+    font-family: 'calibri light';
   }
   

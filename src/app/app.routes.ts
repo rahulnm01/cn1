@@ -12,6 +12,7 @@ import { MacosSetupComponent } from './pages/getting-started/installation/macos-
 import { LinuxSetupComponent } from './pages/getting-started/installation/linux-setup/linux-setup.component';
 import { OverviewComponent } from './pages/getting-started/overview/overview.component';
 import { InstallationComponent } from './pages/getting-started/installation/installation.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -43,8 +44,8 @@ export const routes: Routes = [
       },
     ],
   },
-
-  { path: '**', redirectTo: '/components/content/content.component' },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '/content' }
 ];
 
 
